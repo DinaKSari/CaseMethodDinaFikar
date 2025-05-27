@@ -50,6 +50,18 @@ public class QueueLinkedLists_11_13 {
     }
 
     public void tampilkanAntrian(){
+        if (isEmpty()) {
+            System.out.println("Antrian kosong.");
+            return;
+        }
         System.out.println("--- Antrian Kendaraan ---");
+        Node_11_13 temp = front;
+        while (temp != null) {
+            for (int i = 0; i < max - 1; i++) {
+            temp.kendaraan.tampilkanInformasi();
+            temp = temp.next;
+            i++;
+            }
+        }
     }
 }
