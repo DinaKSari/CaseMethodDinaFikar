@@ -36,6 +36,11 @@ public class SPBUmain_11_13 {
                     antrian();
                     break;
                 case 4:
+                    System.out.print("Masukkan Nama BBM: ");
+                    String namaBBM = sc_11_13.nextLine();
+                    System.out.print("Masukkan Harga Per Liter: ");
+                    String hargaPerLiter = sc_11_13.nextLine();
+                    BBM_11_13 BBM = new BBM_11_13(namaBBM, hargaPerLiter);
                     antrian.dequeue();
                     break;
                 case 5:
