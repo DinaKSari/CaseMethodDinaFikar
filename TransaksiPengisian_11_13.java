@@ -1,5 +1,6 @@
 public class TransaksiPengisian_11_13 {
     Kendaraan_11_13 kendaraan;
+    BBM_13_11 bbm;
     double liter;
     double totalBayar;
 
