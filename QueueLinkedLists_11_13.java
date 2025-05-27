@@ -57,7 +57,7 @@ public class QueueLinkedLists_11_13 {
         System.out.println("--- Antrian Kendaraan ---");
         Node_11_13 temp = front;
         while (temp != null) {
-            for (int i = 0; i < max - 1; i++) {
+            for (int i = 0; i < size; i++) {
             temp.kendaraan.tampilkanInformasi();
             temp = temp.next;
             i++;

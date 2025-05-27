@@ -14,8 +14,6 @@ public class TransaksiPengisian_11_13 {
     }
 
     public void riwayatTransaksi(){
-        if(size != 0){
-            System.out.println(kendaraan.platNomor + " | " + bbm.namaBBM + " | Rp. " + totalBayar);
-        }
+        System.out.println(kendaraan.platNomor + " | " + bbm.namaBBM + " | Rp. " + totalBayar);
     }
 }
