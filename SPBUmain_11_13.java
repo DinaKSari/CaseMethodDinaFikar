@@ -5,8 +5,8 @@ public class SPBUmain_11_13 {
         System.out.println("Masukan max kapasitas antrian di SPBU: ");
         int jum = sc_11_13.nextInt();
         int temp = -1;
-        QueueLinkedLists_11_13 antrian = QueueLinkedLists_11_13(jum);
-        TransaksiPengisian_11_13[] transaksi = TransaksiPengisian_11_13[jum];
+        QueueLinkedLists_11_13 antrian = new QueueLinkedLists_11_13(jum);
+        TransaksiPengisian_11_13[] transaksi = new TransaksiPengisian_11_13[jum];
         TransaksiPengisian_11_13 input;
         int pilihan;
 
@@ -19,7 +19,7 @@ public class SPBUmain_11_13 {
             System.out.println("5. Tampilkan Riwayat Transaksi");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
-            pilihan = Integer.parseInt(sc_11_13.nextLine());
+            pilihan = sc_11_13.nextInt(); sc_11_13.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -39,23 +39,33 @@ public class SPBUmain_11_13 {
                     System.out.println("Jumlah kendaraan dalam antrian: " + antrian.jumlahAntrian());
                     break;
                 case 4:
-                    System.out.println("Petugas melayani " + antrian.front.kendaraan.platNomor);
-                    System.out.print("Masukkan jenis BBM: ");
-                    String namaBBM = sc_11_13.nextLine();
-                    System.out.print("Masukkan Harga Per Liter: ");
-                    double hargaPerLiter = sc_11_13.nextDouble();
-                    BBM_11_13 BBM = new BBM_11_13(namaBBM, hargaPerLiter);
-                    System.out.println("Masukan jumlah liter: ");
-                    double liter = sc_11_13.nextDouble();
-                    double totalBayar = liter * hargaPerLiter;
-                    input = new TransaksiPengisian_11_13(antrian.front.kendaraan, liter, totalBayar);
-                    transaksi[temp + 1] = input;
-                    temp++;
-                    antrian.dequeue();
+                    if(antrian.front != null){
+                        System.out.println("Petugas melayani " + antrian.front.kendaraan.platNomor);
+                        System.out.print("Masukkan jenis BBM: ");
+                        String namaBBM = sc_11_13.nextLine();
+                        System.out.print("Masukkan Harga Per Liter: ");
+                        double hargaPerLiter = sc_11_13.nextDouble();
+                        BBM_11_13 BBM = new BBM_11_13(namaBBM, hargaPerLiter);
+                        System.out.println("Masukan jumlah liter: ");
+                        double liter = sc_11_13.nextDouble();
+                        double totalBayar = liter * hargaPerLiter;
+                        input = new TransaksiPengisian_11_13(antrian.front.kendaraan, liter, totalBayar, BBM, jum);
+                        transaksi[temp + 1] = input;
+                        temp++;
+                        antrian.dequeue();
+                    } else{
+                        System.out.println("Antrian masih kosong!");
+                    }
                     break;
                 case 5:
-                    System.out.println("-- Riwayat Transaksi --");
-                    transaksi[temp].riwayatTransaksi();
+                    if(temp != -1){
+                        System.out.println("-- Riwayat Transaksi --");
+                        for (int i = 0; i <= temp; i++) {
+                            transaksi[i].riwayatTransaksi();
+                        }
+                    } else{
+                        System.out.println("Riwayat transaksi masih kosong!");
+                    }
                     break;
                 case 0:
                     System.out.println(">> Program Selesai ^-^ . . .");
