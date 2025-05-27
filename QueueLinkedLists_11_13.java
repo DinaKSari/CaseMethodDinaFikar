@@ -64,4 +64,10 @@ public class QueueLinkedLists_11_13 {
             }
         }
     }
+
+    int jumlahAntrian(){
+        return size;
+    }
+
+    
 }
