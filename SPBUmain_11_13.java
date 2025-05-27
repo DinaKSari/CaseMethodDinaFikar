@@ -7,6 +7,7 @@ public class SPBUmain_11_13 {
         int temp = -1;
         QueueLinkedLists_11_13 antrian = QueueLinkedLists_11_13(jum);
         TransaksiPengisian_11_13[] transaksi = TransaksiPengisian_11_13[jum];
+        TransaksiPengisian_11_13 input;
         int pilihan;
 
         do {
@@ -46,13 +47,15 @@ public class SPBUmain_11_13 {
                     BBM_11_13 BBM = new BBM_11_13(namaBBM, hargaPerLiter);
                     System.out.println("Masukan jumlah liter: ");
                     double liter = sc_11_13.nextDouble();
-                    TransaksiPengisian_11_13 input = new TransaksiPengisian_11_13(antrian.front.kendaraan, hargaPerLiter, liter);
+                    double totalBayar = liter * hargaPerLiter;
+                    input = new TransaksiPengisian_11_13(antrian.front.kendaraan, liter, totalBayar);
                     transaksi[temp + 1] = input;
                     temp++;
                     antrian.dequeue();
                     break;
                 case 5:
-                    antrian.tampilkanRiwayatTransaksi();
+                    System.out.println("-- Riwayat Transaksi --");
+                    transaksi[temp].riwayatTransaksi();
                     break;
                 case 0:
                     System.out.println(">> Program Selesai ^-^ . . .");
