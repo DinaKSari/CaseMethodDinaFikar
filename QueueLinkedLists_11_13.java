@@ -34,4 +34,18 @@ public class QueueLinkedLists_11_13 {
         size++;
         System.out.println("Kendaraan masuk ke dalam antrian");
     }
+
+    public Kendaraan_11_13 dequeue(){
+        if(isEmpty()){
+            System.out.println("Antrian kosong tidak dapat melayani!");
+            return null;
+        }
+        Kendaraan_11_13 temp = front.kendaraan;
+        front = front.next;
+        if(front == null){
+            rear = null;
+        }
+        size--;
+        return temp;
+    }
 }
