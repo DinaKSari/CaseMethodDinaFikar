@@ -1,9 +1,10 @@
 import java.util.Scanner;
-
 public class SPBUmain_11_13 {
     public static void main(String[] args) {
         Scanner sc_11_13 = new Scanner(System.in);
-        SPBUMethod spbu = new SPBUMethod();
+        System.out.println("Masukan max kapasitas antrian di SPBU: ");
+        int jum = sc_11_13.nextInt();
+        QueueLinkedLists_11_13 antrian = QueueLinkedLists_11_13(jum);
         int pilihan;
 
         do {
@@ -26,19 +27,19 @@ public class SPBUmain_11_13 {
                     System.out.print("Masukkan Merk: ");
                     String merk = sc_11_13.nextLine();
                     Kendaraan_11_13 kendaraan = new Kendaraan_11_13(plat, tipe, merk);
-                    spbu.tambahAntrian(kendaraan);
+                    antrian.enqueue(kendaraan);
                     break;
                 case 2:
-                    spbu.tampilkanAntrian();
+                    antrian.tampilkanAntrian();
                     break;
                 case 3:
-                    spbu.cekJumlahAntrian();
+                    antrian.cekJumlahAntrian();
                     break;
                 case 4:
-                    spbu.layaniKendaraan(sc_11_13);
+                    antrian.dequeue();
                     break;
                 case 5:
-                    spbu.tampilkanRiwayatTransaksi();
+                    antrian.tampilkanRiwayatTransaksi();
                     break;
                 case 0:
                     System.out.println(">> Program Selesai ^-^ . . .");

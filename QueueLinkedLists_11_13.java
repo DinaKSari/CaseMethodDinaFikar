@@ -48,4 +48,8 @@ public class QueueLinkedLists_11_13 {
         size--;
         return temp;
     }
+
+    public void tampilkanAntrian(){
+        System.out.println("--- Antrian Kendaraan ---");
+    }
 }
