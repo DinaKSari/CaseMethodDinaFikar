@@ -33,7 +33,7 @@ public class SPBUmain_11_13 {
                     antrian.tampilkanAntrian();
                     break;
                 case 3:
-                    antrian.cekJumlahAntrian();
+                    antrian();
                     break;
                 case 4:
                     antrian.dequeue();
