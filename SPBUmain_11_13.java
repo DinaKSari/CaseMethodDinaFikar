@@ -33,13 +33,13 @@ public class SPBUmain_11_13 {
                     antrian.tampilkanAntrian();
                     break;
                 case 3:
-                    antrian();
+                    System.out.println("Jumlah kendaraan dalam antrian: " + antrian.jumlahAntrian());
                     break;
                 case 4:
                     System.out.print("Masukkan Nama BBM: ");
                     String namaBBM = sc_11_13.nextLine();
                     System.out.print("Masukkan Harga Per Liter: ");
-                    String hargaPerLiter = sc_11_13.nextLine();
+                    double hargaPerLiter = sc_11_13.nextDouble();
                     BBM_11_13 BBM = new BBM_11_13(namaBBM, hargaPerLiter);
                     antrian.dequeue();
                     break;
