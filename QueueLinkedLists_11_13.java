@@ -58,9 +58,13 @@ public class QueueLinkedLists_11_13 {
         Node_11_13 temp = front;
         while (temp != null) {
             for (int i = 0; i < size - 1; i++) {
-            temp.kendaraan.tampilkanInformasi();
-            temp = temp.next;
-            i++;
+                if(temp == null){
+                    System.out.println("----");
+                } else{
+                    temp.kendaraan.tampilkanInformasi();
+                    temp = temp.next;
+                    i++; 
+                }
             }
         }
     }
